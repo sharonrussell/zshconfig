@@ -1,0 +1,24 @@
+function sshaws(){
+  ssh -i ~/pem-keys/$1.pem ubuntu@$2
+}
+
+export ZSH=/Users/sharonrussell/.oh-my-zsh
+
+
+ZSH_THEME="robbyrussell"
+
+
+plugins=(
+  git
+)
+
+source $ZSH/oh-my-zsh.sh
+
+  export NVM_DIR="$HOME/.nvm"
+  . "/usr/local/opt/nvm/nvm.sh"
+
+  export PATH=$PATH:~/Cloudkat:~/sonar-scanner/bin
+
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+alias srczshrc='source ~/.zshrc'
+alias goserver='sshaws goserver 52.16.177.118'
